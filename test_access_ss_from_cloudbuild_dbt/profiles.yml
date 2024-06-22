@@ -16,4 +16,4 @@ test_access_ss_from_cloudbuild_dbt:
         - https://www.googleapis.com/auth/drive
         - https://www.googleapis.com/auth/spreadsheets
         - openid
-        - https://www.googleapis.com/auth/userinfo.email
+        - tekito
