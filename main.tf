@@ -57,6 +57,7 @@ resource "google_bigquery_dataset" "external_tables" {
   dataset_id                  = "external_tables"
   friendly_name               = "external_tables"
   description                 = "This is a test description"
+  location                    = "asia-northeast1"
   default_table_expiration_ms = 3600000
 }
 
