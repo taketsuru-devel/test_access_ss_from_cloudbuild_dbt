@@ -1,12 +1,10 @@
-config:
-  send_anonymous_usage_stats: False
-
 test_access_ss_from_cloudbuild_dbt:
   target: dev
   outputs:
     dev:
       type: bigquery
       method: oauth
+      dataset: example
       location: asia-northeast1
       threads: 8
       job_execution_timeout_seconds: 1200
