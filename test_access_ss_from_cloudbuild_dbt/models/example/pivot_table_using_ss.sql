@@ -1,3 +1,3 @@
 select *
-from {{ ref('external_tables.pivot_target') }}
+from {{ source('external_tables', 'pivot_target') }}
 
