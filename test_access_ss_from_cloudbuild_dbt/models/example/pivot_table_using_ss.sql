@@ -1,4 +1,4 @@
-{% set axes = get_single_column_values(table=source('external_tables', 'pivot_target'), column='axis_data') %}
+{% set axes = dbt_utils.get_column_values(table=source('external_tables', 'pivot_target'), column='axis_data') %}
 
 select 
   key_date,
