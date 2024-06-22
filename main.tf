@@ -52,3 +52,48 @@ resource "google_project_iam_member" "logs_writer" {
   role    = "roles/logging.logWriter"
   member  = "serviceAccount:${google_service_account.cloudbuild_service_account.email}"
 }
+
+resource "google_bigquery_dataset" "external_tables" {
+  dataset_id                  = "external_tables"
+  friendly_name               = "external_tables"
+  description                 = "This is a test description"
+  default_table_expiration_ms = 3600000
+}
+
+resource "google_bigquery_table" "external_table" {
+  dataset_id = google_bigquery_dataset.external_tables.dataset_id
+  table_id   = "pivot_target"
+
+  schema = <<EOF
+[
+  {
+    "name": "key_date",
+    "type": "DATE",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "axis_data",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "value_data",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]
+EOF
+
+  external_data_configuration {
+    source_format = "GOOGLE_SHEETS"
+    autodetect = false
+
+    google_sheets_options {
+      skip_leading_rows = 1
+    }
+
+    source_uris = [
+      "https://docs.google.com/spreadsheets/d/${var.spreadsheet_id}",
+    ]
+  }
+}
