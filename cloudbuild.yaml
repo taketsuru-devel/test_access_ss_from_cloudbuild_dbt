@@ -1,0 +1,25 @@
+steps:
+  - name: ghcr.io/dbt-labs/dbt-bigquery:1.7.9
+    args:
+      ["deps", "--profiles-dir", ".", "--project-dir", "."]
+  - name: ghcr.io/dbt-labs/dbt-bigquery:1.7.9
+    args:
+      [
+        "--debug",
+        "--log-format",
+        "json",
+        "run",
+        "--profiles-dir",
+        ".",
+        "--project-dir",
+        ".",
+        "--full-refresh",
+        "--exclude",
+        "tag:raw",
+        "--target",
+        $_ENV,
+      ]
+timeout: 1800s
+queueTtl: 300s
+options:
+  logging: CLOUD_LOGGING_ONLY

@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "test-access-ss-from-cloudbuild-dbt"
+version = "0.1.0"
+description = ""
+authors = ["taketsuru-devel <followedwind@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dbt-bigquery = "^1.8.2"
+sqlfluff = "^3.0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
