@@ -1,0 +1,8 @@
+
+version: 2
+
+sources:
+  - name: external_tables
+    schema: external_tables
+    tables:
+      - name: pivot_target 
