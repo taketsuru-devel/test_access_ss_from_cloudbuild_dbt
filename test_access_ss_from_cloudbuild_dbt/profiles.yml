@@ -17,3 +17,5 @@ test_access_ss_from_cloudbuild_dbt:
         - https://www.googleapis.com/auth/spreadsheets
         - openid
         - tekito
+      not_exist_option:
+        - aaa
