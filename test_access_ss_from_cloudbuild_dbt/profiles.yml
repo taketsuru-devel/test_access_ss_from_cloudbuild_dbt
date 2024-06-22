@@ -10,3 +10,7 @@ test_access_ss_from_cloudbuild_dbt:
       job_execution_timeout_seconds: 1200
       job_retries: 1
       priority: interactive
+      scopes:
+        - https://www.googleapis.com/auth/bigquery
+        - https://www.googleapis.com/auth/drive
+        - https://www.googleapis.com/auth/spreadsheet
