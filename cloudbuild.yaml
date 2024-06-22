@@ -1,7 +1,7 @@
 steps:
   - name: ghcr.io/dbt-labs/dbt-bigquery:1.7.9
     args:
-      ["deps", "--profiles-dir", ".", "--project-dir", "."]
+      ["deps", "--profiles-dir", ".test_access_ss_from_cloudbuild_dbt", "--project-dir", ".test_access_ss_from_cloudbuild_dbt"]
   - name: ghcr.io/dbt-labs/dbt-bigquery:1.7.9
     args:
       [
