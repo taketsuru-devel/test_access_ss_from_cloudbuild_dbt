@@ -10,14 +10,10 @@ steps:
         "json",
         "run",
         "--profiles-dir",
-        ".",
+        "test_access_ss_from_cloudbuild_dbt",
         "--project-dir",
-        ".",
+        "test_access_ss_from_cloudbuild_dbt",
         "--full-refresh",
-        "--exclude",
-        "tag:raw",
-        "--target",
-        $_ENV,
       ]
 timeout: 1800s
 queueTtl: 300s
