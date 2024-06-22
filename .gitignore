@@ -1,3 +1,5 @@
 .terraform
 *.swp
 logs
+terraform.tfvars
+terraform.tfstate*

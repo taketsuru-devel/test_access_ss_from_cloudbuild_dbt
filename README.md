@@ -20,3 +20,5 @@
   - project名とかdataset名とか入力したけどコードに存在しない謎
   - datasetはdbt_project.ymlのmodels.project名.models配下のディレクトリ名.schemaに定義
 - git initしてfirst commit
+- terraform書いてterraform init & apply
+  - お試しなのでstateはlocalでcommitしない
