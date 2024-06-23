@@ -3,7 +3,9 @@ test_access_ss_from_cloudbuild_dbt:
   outputs:
     dev:
       type: bigquery
-      method: oauth
+        # method: oauth
+      method: service-account
+        # keyfile: cloud-sa-key.json
       dataset: example
       location: asia-northeast1
       threads: 8
